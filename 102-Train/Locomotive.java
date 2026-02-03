@@ -8,9 +8,6 @@ public class Locomotive extends RailCar {
     
     @Override
     public void drawCar(Graphics g){
-        // First draw the base RailCar (rectangle + wheels)
-        
-        // Now add locomotive-specific features (smokestack, etc.)
         int[] xPoints = {
             x,                          // 0
             x+width,                 // 1
@@ -44,15 +41,7 @@ public class Locomotive extends RailCar {
         
         g.setColor(color);
         g.fillPolygon(xPoints, yPoints, 13);
-
-        g.setColor(Color.BLACK);
-        int wheelY = y + 65; 
-        int wheelSize = 30;
-        int wheelSpacing = width / 3;
         
-        for(int i = 0; i < 2; i++){
-            int wheelX = x + (i * wheelSpacing) + 40;
-            g.fillOval(wheelX, wheelY, wheelSize, wheelSize);
-        }
+        drawWheels(g);
     }
 }

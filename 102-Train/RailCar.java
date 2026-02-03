@@ -26,7 +26,10 @@ public class RailCar{
         g.fillRect(x,y+50,25,10);
         g.setColor(color);
         g.fillRect(x+25, y, width-25, 80);
-        
+        drawWheels(g);
+    }
+    
+    protected void drawWheels(Graphics g){
         g.setColor(Color.BLACK);
         int wheelY = y + 65;
         int wheelSize = 30;
